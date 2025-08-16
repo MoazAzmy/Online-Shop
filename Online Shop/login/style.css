@@ -1,107 +1,65 @@
-.inp1{
-
-text-align:center;
-justify-content: center;
-display: flex;
-align-items: center;
-height: 20px;
-position: relative;
-margin-bottom: 10px;
-width: 300px;
-
-
-
-
-
-}
-.inp2{
-text-align:center;
-justify-content: center;
-display: flex;
-align-items: center;
-height: 20px;
-position: relative;
-width: 300px;
-
+body {
+  background-color: #d6e5bd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-button{
-align-content: center;
-justify-content: center;
-display: flex;
-align-items: center;
-text-align: center;
-position: relative;
-right: -577px;
-top: -100px;
-border-radius: 5px;
-width: 310px;
-border: 0cap;
-font-size: 20px;
-cursor: pointer;
-height: 55px;
- color:black;
- background:#f9e1a8
-
-
-}
-.login-page{
-
-    background-color: white;
-    width: 400px;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    border-radius: 20px;
-    height: 500px;
-    position: relative;
-    bottom: -90px;
-    left: -20px;
-    
+.login-page {
+  background-color: white;
+  width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
 }
 
-body{
-
-background-color:#d6e5bd;
-align-items: center;
-justify-content: center;
-
+h1 {
+  text-align: center;
+margin: 0%;
 }
 
-h1{
-position: relative;
-align-items: center;
-text-align: center;
-font-size: 50px;;
-justify-content: center;
-top: -410px;
-left: -20px;
-margin: auto;
-
-
-
-
+.inp1, .inp2 {
+  width: 94%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  margin-right: 10px;
 }
-p{
-align-items: center;
-align-content: center;
-justify-content: center;
-position: relative;
-text-align: center;
-top: -120px;
-left: -80px;
-font-size: 20px;
-
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-a{
-justify-content: center;
-align-items: center;
-text-align: center;
-align-content: center;
-position: relative;
-right: -775px;
-top: -163px;
-font-size: 20px;
+button {
+  width: 40%;
+  height: 55px;
+  border: 0px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  background: #f9e1a8;
+  color: black;
+}
+button:hover {
+  background: #f0d18c;
+}
 
+p {
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
