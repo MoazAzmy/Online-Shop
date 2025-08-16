@@ -1,0 +1,107 @@
+.inp1{
+
+text-align:center;
+justify-content: center;
+display: flex;
+align-items: center;
+height: 20px;
+position: relative;
+margin-bottom: 10px;
+width: 300px;
+
+
+
+
+
+}
+.inp2{
+text-align:center;
+justify-content: center;
+display: flex;
+align-items: center;
+height: 20px;
+position: relative;
+width: 300px;
+
+}
+
+button{
+align-content: center;
+justify-content: center;
+display: flex;
+align-items: center;
+text-align: center;
+position: relative;
+right: -577px;
+top: -100px;
+border-radius: 5px;
+width: 310px;
+border: 0cap;
+font-size: 20px;
+cursor: pointer;
+height: 55px;
+ color:black;
+ background:#f9e1a8
+
+
+}
+.login-page{
+
+    background-color: white;
+    width: 400px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 20px;
+    height: 500px;
+    position: relative;
+    bottom: -90px;
+    left: -20px;
+    
+}
+
+body{
+
+background-color:#d6e5bd;
+align-items: center;
+justify-content: center;
+
+}
+
+h1{
+position: relative;
+align-items: center;
+text-align: center;
+font-size: 50px;;
+justify-content: center;
+top: -410px;
+left: -20px;
+margin: auto;
+
+
+
+
+}
+p{
+align-items: center;
+align-content: center;
+justify-content: center;
+position: relative;
+text-align: center;
+top: -120px;
+left: -80px;
+font-size: 20px;
+
+}
+a{
+justify-content: center;
+align-items: center;
+text-align: center;
+align-content: center;
+position: relative;
+right: -775px;
+top: -163px;
+font-size: 20px;
+
+}
