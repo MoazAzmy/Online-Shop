@@ -63,6 +63,7 @@ nav ul li a:hover{
     border: 1px solid #ddd;
     border-radius: 8px;
     width: 185px;
+    justify-content: space-between;
 }
 .product:hover{
     
@@ -82,4 +83,47 @@ nav ul li a:hover{
     font-size: 15px;
     color: #5731d3;
     font-weight: bold;
+}
+.add-to-cart{
+    background: #5731d3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.add-to-cart:hover{
+    background: #0f042c;
+}
+.sizes {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+}
+.sizes input[type="radio"] {
+    margin-right: 5px;
+    accent-color: #0d052a; 
+}
+.sizes label {
+    cursor: pointer;
+    font-weight: 500;
+    color: #000000;
+}
+.quantity {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    gap: 10px;
+}
+.quantity input {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    
 }
