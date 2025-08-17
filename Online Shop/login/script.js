@@ -12,4 +12,7 @@ function login(event) {
     window.location.href = '/admin/Index.html';
     return false;
   }
+  event.preventDefault();
+  window.location.href = '/home/Index.html';
+  return false;
 }
