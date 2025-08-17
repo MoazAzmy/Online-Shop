@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Register</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
 
@@ -13,14 +14,13 @@
   <div class="login-page">
     <h1>Register</h1>
     <form>
-      <input class="name" type="text" placeholder=" Full  Name ">
-      <input class="inp3" type="text" placeholder="Number">
-      <input class="address" type="text" placeholder="Address">
-      <input class="inp1" type="email" placeholder="Email">
-      <input class="inp2" type="password" placeholder="Password">
-      <input class="confirm" type="password" placeholder="Confirm password">
-      
-      <button>Register</button>
+      <input class="name" type="text" placeholder=" Full  Name " required id="name">
+      <input class="inp3" type="phone" placeholder="Number" required id="phone" value="">
+      <input class="address" type="text" placeholder="Address" required id="address">
+      <input class="inp1" type="email" placeholder="Email" required id="email">
+      <input class="inp2" type="password" placeholder="Password" required id="password" value="">
+      <input class="confirm" type="password" placeholder="Confirm password" required id="confirmPass" value="">
+      <input type="submit" value="Register" id="submit-btn" onclick="validate(event)"> 
     </form>
     <p>already have an account? 
         <a href="/login/Index.html">Sign in</a>
