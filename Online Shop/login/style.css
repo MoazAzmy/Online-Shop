@@ -36,7 +36,7 @@ form {
   flex-direction: column;
   align-items: center;
 }
-button {
+.inp3 {
   width: 40%;
   height: 55px;
   border: 0px;
@@ -46,7 +46,7 @@ button {
   background: #f9e1a8;
   color: black;
 }
-button:hover {
+.inp3:hover {
   background: #f0d18c;
 }
 

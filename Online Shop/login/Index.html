@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
 
@@ -12,10 +13,10 @@
 
   <div class="login-page">
     <h1>Login</h1>
-    <form>
-      <input class="inp1" type="email" placeholder="Email">
-      <input class="inp2" type="password" placeholder="Password">
-      <button>Login</button>
+    <form onsubmit="login(event)">
+      <input class="inp1" type="email" placeholder="Email" id="email">
+      <input class="inp2" type="password" placeholder="Password" id="password">
+      <input class="inp3" type="submit" value="Login">
     </form>
     <p>Don't have an account? 
         <a href="/register/Index.html">Sign up</a>
