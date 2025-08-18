@@ -2,10 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin</title>
+  <title>Admin - Manage Products</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <div class="container">
+    <nav>
+      <a class="logo" href="/home/Index.html">CHAMPIONS WEAR</a>
+      <ul>
+        <li><a href="/home/Index.html">Home</a></li>
+        <li><a href="/products/Index.html">View Products</a></li>
+        <li><a href="/admin/Index.html">Admin</a></li>
+        <li><a href="#">Go to Cart</a></li>
+        <li><a href="/about us/Index.html">About Us</a></li>
+      </ul>
+    </nav>
+    <h1>Admin Panel</h1>
+    <h2>Add New Product</h2>
+    <form id="add-product-form">
+      <input type="text" id="product-name" placeholder="Product Name" required>
+      <input type="text" id="product-price" placeholder="Price (e.g. 50)" required>
+      <input type="text" id="product-image" placeholder="Image URLs (comma separated, e.g. https://img1.jpg, https://img2.jpg)" required>
+      <button type="submit">Add Product</button>
+    </form>
+    <h2>Current Products</h2>
+    <div id="products-list"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
