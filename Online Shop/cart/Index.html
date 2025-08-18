@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="style.css">
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>Cart - Champions Wear</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src = "data.js"></script>
-    <div id="navigation_bar">Navigation Bar</div>
+    <nav class="navbar">
+        <a class="logo" href="/home/Index.html">CHAMPIONS WEAR</a>
+        <ul>
+            <li><a href="/home/Index.html">Home</a></li>
+            <li><a href="/products/Index.html">View Products</a></li>
+            <li><a href="/cart/Index.html">Cart</a></li>
+            <li><a href="/about us/Index.html">About Us</a></li>
+        </ul>
+    </nav>
+    <script src="script.js"></script>
     <div class="product_details" width="100%">
         <div class="product_image_container">
             <div class="slideshow-wrapper">
-            <div class="slideshow-container" id="slideshow-container"></div>
-            <br>
-            <div class="dots-container" id="dots-container" style="text-align:center"></div>
+                <div class="slideshow-container" id="slideshow-container"></div>
+                <br>
+                <div class="dots-container" id="dots-container" style="text-align:center"></div>
             </div>
         </div>
         <div class="buy_product">
             <div class="product_name"><p id="product_name">name</p></div>
-
             <div class="rating">
                 <span id="stars"></span>
                 <span id="rating-value"></span>
             </div>
-
             <div id="price"></div>
-            
             <div class="product_options">
                 <select id="size">
                     <option value="S">S</option>
@@ -32,17 +37,24 @@
                     <option value="L">L</option>
                     <option value="XL">XL</option>
                 </select>
-                
                 <input type="number" id="quantity" value="1" min="1">
             </div>
-            
-            <div style="border-bottom: none;"><button id="add-to-cart" onclick="addToCart()">Add to Cart</button></div>
+            <div style="border-bottom: none;">
+                <button id="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            </div>
+            <div style="border-bottom: none;">
+                <button id="checkout-btn" onclick="goToCheckout()">Checkout</button>
+            </div>
         </div>
     </div>
-
     <h2 style="margin:30px; border-top:solid 2px; padding: 15px;">Other Products</h2>
     <div id="related-products" style="display:flex; gap:20px; flex-wrap:wrap; margin: auto; padding: 30px;"></div>
-
-    <script src = "product_script.js"></script>
+    <div id="cart-items"></div>
+    <div id="other-products"></div>
+    <script>
+    function goToCheckout() {
+        window.location.href = "/checkout/Index.html";
+    }
+    </script>
 </body>
 </html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>pay | clothes shop </title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="brand"> 
+                <a href="/home/Index.html" style="color:inherit;text-decoration:none;">clothes shop</a>
+            </h1>
+            <nav class="crumbs" aria-label="breadcrumbs">
+                <a href="/home/Index.html">الرئيسية</a>
+                <span>›</span>
+                <a href="/products/Index.html">المنتجات</a>
+                <span>›</span>
+                <a href="/cart/Index.html">السلة</a>
+                <span>›</span>
+                <strong>الدفع</strong>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container checkout-grid">
+        
+        <section class="card">
+            <h2 class="card-title">معلومات الشحن والدفع</h2>
+
+            <form class="form" action="#" method="post" novalidate>
+                
+                <fieldset class="fieldset">
+                    <legend>بيانات التواصل</legend>
+                    <div class="grid-2">
+                        <label class="field">
+                            <span>الاسم الكامل</span>
+                            <input type="text" name="full_name" placeholder="ahmad mohamed" required>
+                        </label>
+                        <label class="field">
+                            <span>البريد الإلكتروني</span>
+                            <input type="email" name="email" placeholder="name@example.com" required>
+                        </label>
+                        <label class="field">
+                            <span>رقم الهاتف</span>
+                            <input type="tel" name="phone" inputmode="tel" placeholder="01XXXXXXXXX" required>
+                        </label>
+                    </div>
+                </fieldset>
+
+                
+                <fieldset class="fieldset">
+                    <legend>عنوان الشحن</legend>
+                    <div class="grid-2">
+                        <label class="field">
+                            <span>الدولة</span>
+                            <select name="country" required>
+                                <option value="">اختر الدولة</option>
+                                <option value="EG">مصر</option>
+                                <option value="SA">السعودية</option>
+                                <option value="AE">الإمارات</option>
+                                <option value="KW">الكويت</option>
+                            </select>
+                        </label>
+                        <label class="field">
+                            <span>المحافظة / المدينة</span>
+                            <input type="text" name="city" placeholder="القاهرة" required>
+                        </label>
+                        <label class="field">
+                            <span>العنوان</span>
+                            <input type="text" name="address" placeholder="الشارع، رقم المبنى/الشقة" required>
+                        </label>
+                        <label class="field">
+                            <span>الرمز البريدي (اختياري)</span>
+                            <input type="text" name="zip" inputmode="numeric" placeholder="12345">
+                        </label>
+                    </div>
+                </fieldset>
+
+                
+                <fieldset class="fieldset">
+                    <legend>طريقة التوصيل</legend>
+                    <div class="ship-options">
+                        <label class="radio">
+                            <input type="radio" name="shipping" value="standard" checked>
+                            <span>عادي (3–5 أيام) — مجاني</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="shipping" value="express">
+                            <span>سريع (1–2 يوم) — 100 ج.م</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                
+                <fieldset class="fieldset">
+                    <legend>طريقة الدفع</legend>
+                    <div class="ship-options">
+                        <label class="radio">
+                            <input type="radio" name="payment" value="cash" checked onclick="toggleCardFields(false)">
+                            <span>كاش عند الاستلام</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="payment" value="online" onclick="toggleCardFields(true)">
+                            <span>دفع أونلاين (بطاقة)</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                
+                <fieldset class="fieldset" id="card-fields" style="display:none;">
+                    <legend>بيانات البطاقة</legend>
+                    <div class="grid-2">
+                        <label class="field">
+                            <span>اسم صاحب البطاقة</span>
+                            <input type="text" name="card_name" placeholder="كما هو على البطاقة">
+                        </label>
+                        <label class="field">
+                            <span>رقم البطاقة</span>
+                            <input type="text" name="card_number" inputmode="numeric" placeholder="1234 5678 9012 3456">
+                        </label>
+                        <label class="field">
+                            <span>تاريخ الانتهاء</span>
+                            <input type="text" name="expiry" inputmode="numeric" placeholder="MM/YY">
+                        </label>
+                        <label class="field">
+                            <span>CVV</span>
+                            <input type="password" name="cvv" inputmode="numeric" placeholder="***">
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-primary">إتمام الشراء</button>
+            </form>
+        </section>
+
+        
+        <aside class="card order-card">
+            <h2 class="card-title">ملخص الطلب</h2>
+            <ul class="cart-list">
+                <!-- Filled by JS -->
+            </ul>
+
+            <div class="totals">
+                <div><span>المجموع الفرعي</span><span>0 ج.م</span></div>
+                <div><span>الشحن</span><span>مجاني</span></div>
+                <div class="divider"></div>
+                <div class="grand"><span>الإجمالي</span><strong>0 ج.م</strong></div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <small>© 2025 متجر الملابس</small>
+            <nav class="crumbs" aria-label="footer-links">
+                <a href="/home/Index.html">الرئيسية</a>
+                <span>·</span>
+                <a href="/products/Index.html">المنتجات</a>
+                <span>·</span>
+                <a href="/cart/Index.html">السلة</a>
+                <span>·</span>
+                <a href="/about us/Index.html">عن المتجر</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+    function toggleCardFields(show) {
+      const cardFields = document.getElementById("card-fields");
+      cardFields.style.display = show ? "block" : "none";
+    }
+    </script>
+</body>
+</html>

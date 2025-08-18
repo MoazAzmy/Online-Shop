@@ -4,7 +4,7 @@
     font-family: sans-serif;
 }
 body{
-    background: #c4dbdf;
+    background: #fff;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -14,8 +14,9 @@ body{
 .container{
     width: 80%;
     height: 80%;
-    background: rgba(87, 49, 211, 0.1);
-    border-radius: 20px;;
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #222;
 }
 nav{
     display: flex;
@@ -23,10 +24,9 @@ nav{
     align-items: center;
     width: 80%;
     margin: auto;
-
 }
 nav .logo{
-    color: black;
+    color: #111;
     text-decoration: none;
     font-size: 30px;
     text-transform: uppercase;
@@ -38,63 +38,66 @@ nav ul li{
     margin: 0 6px;
 }
 nav ul li a{
-    color: black;
+    color: #111;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
+    transition: color 0.2s, background 0.2s;
+    padding: 8px 10px;
+    border-radius: 5px;
 }
 nav ul li a:hover{
-    color: #5731d3;
+    color: #fff;
+    background: #111;
 }
 .products{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    
     gap:15px;
-    
-    
 }
 .product{
     text-align: center;
     margin: 10px;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #222;
     border-radius: 8px;
     width: 185px;
-    justify-content: space-between;
+    background: #fff;
+    transition: transform 0.2s;
 }
 .product:hover{
-    
     transform: scale(1.05);
-    
 }
 .product img{
     width: 100%;
-    
     border-radius: 8px;
+    border: 1px solid #222;
+    background: #fff;
 }
 .product h3{
     font-size: 19px;
     margin: 10px 0;
+    color: #111;
 }
 .product .price{
     font-size: 15px;
-    color: #5731d3;
+    color: #111;
     font-weight: bold;
 }
 .add-to-cart{
-    background: #5731d3;
-    color: white;
+    background: #111;
+    color: #fff;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background 0.2s;
 }
 .add-to-cart:hover{
-    background: #0f042c;
+    background: #000;
 }
 .sizes {
     margin: 10px 0;
@@ -105,12 +108,12 @@ nav ul li a:hover{
 }
 .sizes input[type="radio"] {
     margin-right: 5px;
-    accent-color: #0d052a; 
+    accent-color: #111; 
 }
 .sizes label {
     cursor: pointer;
     font-weight: 500;
-    color: #000000;
+    color: #111;
 }
 .quantity {
     margin: 10px 0;
@@ -123,7 +126,7 @@ nav ul li a:hover{
 .quantity input {
     width: 50px;
     padding: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #222;
     border-radius: 5px;
-    
+    background: #fff;
 }
