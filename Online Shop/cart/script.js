@@ -8,16 +8,22 @@ function setCart(cart) {
 function getProducts() {
     return JSON.parse(localStorage.getItem('products') || '[]');
 }
+function getView(){
+    return JSON.parse(localStorage.getItem('view') || '[]');
+}
+function setView(view){
+    localStorage.setItem('view',JSON.stringify(view));
+}
 
 // --- Render main cart product (first in cart) ---
 function renderMainCartProduct() {
-    const cart = getCart();
-    if (cart.length === 0) {
+    const view = getView();
+    if (view.length === 0) {
         document.querySelector('.product_details').style.display = 'none';
         document.getElementById('related-products').innerHTML = "<p>Your cart is empty.</p>";
         return;
     }
-    const product = cart[cart.length - 1]; // Show last added product
+    const product = view[view.length - 1]; // Show last added product
 
     // Name, price, rating (dummy), etc.
     document.getElementById('product_name').textContent = product.name;
@@ -33,8 +39,8 @@ function renderMainCartProduct() {
     document.getElementById('stars').innerHTML = stars;
 
     // Set size and quantity
-    document.getElementById('size').value = product.size || "M";
-    document.getElementById('quantity').value = product.quantity || 1;
+    document.getElementById('size').value = "M";
+    document.getElementById('quantity').value = 1;
 
     // Slideshow for images
     const images = product.images ? product.images : [product.image];
@@ -44,36 +50,27 @@ function renderMainCartProduct() {
 // --- Slideshow logic ---
 function renderSlideshow(images) {
     const slideshow = document.getElementById('slideshow-container');
-    const dots = document.getElementById('dots-container');
     slideshow.innerHTML = '';
-    dots.innerHTML = '';
     images.forEach((img, idx) => {
         const slide = document.createElement('div');
         slide.className = 'mySlides';
         slide.style.display = idx === 0 ? 'block' : 'none';
         slide.innerHTML = `<img src="${img}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;border:1px solid #222;background:#fff;">`;
         slideshow.appendChild(slide);
-
-        const dot = document.createElement('span');
-        dot.className = 'dot' + (idx === 0 ? ' active' : '');
-        dot.onclick = () => showSlides(idx, images.length);
-        dots.appendChild(dot);
     });
-
     // Prev/Next buttons
-    if (images.length > 1) {
-        const prev = document.createElement('a');
-        prev.className = 'prev';
-        prev.innerHTML = '&#10094;';
-        prev.onclick = () => plusSlides(-1, images.length);
-        slideshow.appendChild(prev);
+    const prev = document.createElement('a');
+    prev.className = 'prev';
+    prev.innerHTML = '&#10094;';
+    prev.onclick = () => plusSlides(-1, images.length);
+    slideshow.appendChild(prev);
 
-        const next = document.createElement('a');
-        next.className = 'next';
-        next.innerHTML = '&#10095;';
-        next.onclick = () => plusSlides(1, images.length);
-        slideshow.appendChild(next);
-    }
+    const next = document.createElement('a');
+    next.className = 'next';
+    next.innerHTML = '&#10095;';
+    next.onclick = () => plusSlides(1, images.length);
+    slideshow.appendChild(next);
+
     window.currentSlideIdx = 0;
     window.totalSlides = images.length;
 }
@@ -83,39 +80,37 @@ function plusSlides(n, total) {
 }
 function showSlides(n, total) {
     const slides = document.getElementsByClassName('mySlides');
-    const dots = document.getElementsByClassName('dot');
     if (!slides.length) return;
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
-        dots[i].classList.remove('active');
     }
     slides[n].style.display = 'block';
-    dots[n].classList.add('active');
     window.currentSlideIdx = n;
 }
 
 // --- Add to cart (update quantity/size) ---
-window.addToCart = function() {
+function addToCart() {
+    const view = getView();
     const cart = getCart();
-    if (cart.length === 0) return;
-    const product = cart[cart.length - 1];
+    const product = view[view.length - 1];
     product.size = document.getElementById('size').value;
     product.quantity = parseInt(document.getElementById('quantity').value) || 1;
-    cart[cart.length - 1] = product;
-    setCart(cart);
+    
+    setCart(product);
     alert('Cart updated!');
+    console.log(cart);
 };
 
 // --- Render related/other products ---
 function renderRelatedProducts() {
     const products = getProducts();
-    const cart = getCart();
+    const view = getView();
     const relatedDiv = document.getElementById('related-products');
     relatedDiv.innerHTML = '';
     // Exclude the main cart product (by name and image)
-    const main = cart.length ? cart[cart.length - 1] : null;
+    const main = view.length ? view[view.length - 1] : null;
     products.forEach((product, idx) => {
-        if (main && product.name === main.name && product.images && main.image && product.images[0] === main.image) return;
+        if (main && product.name === main.name && main.price === product.price) return;
         const div = document.createElement('div');
         div.className = 'product';
         div.style = "border:1px solid #222;border-radius:8px;padding:10px;width:160px;background:#fff;text-align:center;cursor:pointer;transition:box-shadow 0.2s;";
@@ -127,9 +122,9 @@ function renderRelatedProducts() {
         // Make product clickable: clicking it adds it to cart and reloads the view
         div.addEventListener('click', function() {
             // Add this product to cart and show as main
-            const cart = getCart();
+            const view = getView();
             // Default to size M and quantity 1
-            const cartItem = {
+            const viewItem = {
                 name: product.name,
                 price: product.price,
                 images: product.images,
@@ -137,8 +132,8 @@ function renderRelatedProducts() {
                 size: "M",
                 quantity: 1
             };
-            cart.push(cartItem);
-            setCart(cart);
+            view.push(viewItem);
+            setView(view);
             // Reload page to show this product as main
             window.location.reload();
         });
