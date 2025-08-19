@@ -25,7 +25,6 @@ function renderProducts() {
 }
 renderProducts();
 
-
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('view-product')) {
         const idx = +e.target.dataset.idx;

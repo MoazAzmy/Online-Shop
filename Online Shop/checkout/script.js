@@ -83,9 +83,10 @@ function renderCartSummary() {
     }
 
     // Update totals
+    let total = subtotal + shipping;
     if (totalsDivs[0]) totalsDivs[0].textContent = formatPrice(subtotal);
     if (totalsDivs[1]) totalsDivs[1].textContent = shipping === 0 ? "مجاني" : formatPrice(shipping);
-    if (totalsDivs[3]) totalsDivs[3].innerHTML = `<strong>${formatPrice(subtotal + shipping)}</strong>`;
+    document.getElementById("grand-total").textContent = total +' ج.م'; 
 }
 
 // Handle increase, decrease, and remove actions

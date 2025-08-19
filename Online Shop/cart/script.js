@@ -15,7 +15,6 @@ function setView(view){
     localStorage.setItem('view',JSON.stringify(view));
 }
 
-// --- Render main cart product (first in cart) ---
 function renderMainCartProduct() {
     const view = getView();
     if (view.length === 0) {
@@ -96,9 +95,12 @@ function addToCart() {
     product.size = document.getElementById('size').value;
     product.quantity = parseInt(document.getElementById('quantity').value) || 1;
     
-    setCart(product);
+    cart.push(product);
+    setCart(cart);
     alert('Cart updated!');
     console.log(cart);
+    console.log(view);
+    console.log(getProducts());
 };
 
 // --- Render related/other products ---
