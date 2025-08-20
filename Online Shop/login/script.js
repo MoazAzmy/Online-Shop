@@ -9,10 +9,10 @@ function login(event) {
   }
   if(email === 'admin@gmail.com' && password === 'admin') {
     event.preventDefault();
-    window.location.href = '/admin/Index.html';
+    window.location.href = '../admin/Index.html';
     return false;
   }
   event.preventDefault();
-  window.location.href = '/home/Index.html';
+  window.location.href = '../home/Index.html';
   return false;
 }

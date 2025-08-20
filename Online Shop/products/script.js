@@ -38,6 +38,6 @@ document.addEventListener('click', function(e) {
         const view = JSON.parse(localStorage.getItem('view') || '[]');
         view.push(viewItem);
         localStorage.setItem('view', JSON.stringify(view));
-        window.location.href = "/cart/Index.html";
+        window.location.href = "../cart/Index.html";
       }
     });

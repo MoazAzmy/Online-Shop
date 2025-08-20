@@ -24,7 +24,7 @@ function validate(event) {
     return false;
   }
   event.preventDefault();
-  window.location.href = "/login/Index.html";
+  window.location.href = "../login/Index.html";
   return true;
 }
 
