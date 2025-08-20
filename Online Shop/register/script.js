@@ -23,6 +23,8 @@ function validate(event) {
     event.preventDefault();
     return false;
   }
+  event.preventDefault();
+  window.location.href = "/login/Index.html";
   return true;
 }
 
