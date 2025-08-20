@@ -31,10 +31,7 @@ document.getElementById('add-product-form').addEventListener('submit', function(
     e.preventDefault();
     const name = document.getElementById('product-name').value.trim();
     const price = document.getElementById('product-price').value.trim();
-    const images = document.getElementById('product-image').value
-        .split(',')
-        .map(url => url.trim())
-        .filter(url => url.length > 0);
+    const images = document.getElementById('product-image').value.split(',');
     if (!name || !price || images.length === 0) return;
     const products = getProducts();
     products.push({ name, price, images });

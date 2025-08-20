@@ -1,0 +1,48 @@
+*{
+
+margin: 0px;
+padding: 0px;
+
+}
+
+.aboutus{
+display: flex;
+align-items: flex-start;
+width: 100%;
+
+}
+.img{
+
+width: 20px;
+ float: left;
+
+}
+.links{
+background-color: rgb(0, 0, 0);
+display: flex;
+height: 50px;
+width: 100%;
+text-align: center;
+align-items: center;
+justify-content: center;
+gap: 80px;
+
+
+}
+.links a{
+ padding: 8px 20px;
+  border-radius: 20px; 
+  text-decoration: none;
+  color: white;
+  background-color: rgb(53, 53, 53); 
+
+
+
+}
+.text{
+    margin-left: 10px;
+}
+.text p{
+font-size: 23px;
+line-height: 1.5;
+}
